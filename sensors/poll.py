@@ -1,6 +1,8 @@
 from st2reactor.sensor.base import PollingSensor
 import requests
 import json
+import os
+from requests.adapters import HTTPAdapter
 
 class Poll(PollingSensor):
     def __init__(self, sensor_service,  config=None, poll_interval=5) -> None:
@@ -18,7 +20,12 @@ class Poll(PollingSensor):
         pass
 
     def poll(self):
-        data = requests.get("http://localhost:5000/orders/pending")
+        os.environ['NO_PROXY'] = '127.0.0.1'
+        headers = {
+            'cache-control': "no-cache",
+            'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36'
+        }
+        data = requests.get("http://127.0.0.1:5000/orders/pending", headers=headers)
         data = data.json()
         if not 'res' in data:
             self._dispatch_trigger(data)
