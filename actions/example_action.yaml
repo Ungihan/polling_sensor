@@ -1,0 +1,6 @@
+---
+name: example_action
+runner_type: python-script
+description: just to learn
+enabled: true
+entry_point: example_action.py

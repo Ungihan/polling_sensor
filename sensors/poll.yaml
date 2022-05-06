@@ -1,0 +1,18 @@
+---
+    class_name: "Poll"
+    entry_point: "poll.py"
+    description: "sensor to learn polling"
+    poll_interval: 30
+    trigger_types:
+      -
+        name: "example_trigger"
+        description: "learn trigger by this example"
+        payload_schema:
+          type: "object"
+          properties:
+            data:
+              type: "string"
+            rule:
+              type: "string"
+            status:
+              type: "string"

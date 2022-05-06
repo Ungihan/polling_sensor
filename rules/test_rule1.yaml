@@ -1,0 +1,16 @@
+---
+name: test_rule
+description: test rule
+enabled: true
+
+trigger:
+  type: polling_sesnor.example_trigger
+
+criteria:
+  trigger.rule:
+    type: "equals"
+    pattern: "rule1"
+    
+
+action:
+  ref: polling_sesnor.example_action
