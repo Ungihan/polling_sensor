@@ -18,7 +18,7 @@ class Poll(PollingSensor):
         pass
 
     def poll(self):
-        data = requests.get("http://127.0.0.1:5000/orders/pending")
+        data = requests.get("http://localhost:5000/orders/pending")
         data = data.json()
         if not 'res' in data:
             self._dispatch_trigger(data)
