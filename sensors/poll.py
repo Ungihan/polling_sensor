@@ -20,14 +20,7 @@ class Poll(PollingSensor):
         pass
 
     def poll(self):
-        os.environ['NO_PROXY'] = '127.0.0.1'
-        headers = {
-            'cache-control': "no-cache",
-            'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36'
-        }
-        res = requests.get('http://127.0.0.1:5000')
-        print(res.json())
-        data = requests.get("http://127.0.0.1:5000/orders/pending", headers=headers)
+        data = requests.get("http://127.0.0.1:5000/orders/pending")
         data = data.json()
         if not 'res' in data:
             self._dispatch_trigger(data)
