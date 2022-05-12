@@ -5,7 +5,7 @@
     poll_interval: 30
     trigger_types:
       -
-        name: "example_trigger"
+        name: "aytra_trigger"
         description: "learn trigger by this example"
         payload_schema:
           type: "object"

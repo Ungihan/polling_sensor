@@ -11,8 +11,8 @@ class Poll(PollingSensor):
                                     poll_interval=poll_interval
                                 )
         self._logger = self.sensor_service.get_logger(name= self.__class__.__name__)
-        self._trigger_name = 'example_trigger'
-        self._trigger_pack = 'polling_sesnor'
+        self._trigger_name = 'aytra_trigger'
+        self._trigger_pack = 'aytra_sensor'
         self._trigger_ref = '.'.join([self._trigger_pack, self._trigger_name])
         self._stop = False
 
