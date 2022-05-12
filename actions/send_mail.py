@@ -31,5 +31,5 @@ class SendEmail(Action):
             server.close()
 
             print("email sent")
-        except:
-            print('Something went wrong...')
+        except Exception as e:
+            print(e)
