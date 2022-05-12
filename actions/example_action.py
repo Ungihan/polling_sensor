@@ -17,6 +17,6 @@ class ExampleAction(Action):
             'rule': 'rule2',
         }
 
-        response = requests.post('http://172.17.0.1/order', headers=headers, json=json_data)
+        response = requests.post('http://6dc5-2402-4000-2280-bb75-d2ab-3b0a-8063-f152.ngrok.io/order', headers=headers, json=json_data)
         self.logger.info("Successfully req to awsbill")
 
