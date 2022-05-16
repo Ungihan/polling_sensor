@@ -20,7 +20,7 @@ class Poll(PollingSensor):
         pass
 
     def poll(self):
-        data = requests.get("http://a4ff-2402-4000-2280-bb75-d2ab-3b0a-8063-f152.ngrok.io/orders/pending")
+        data = requests.get("http://9abd-2402-4000-2381-1281-dac6-1c01-db0d-9467.ngrok.io/orders/pending")
         data = data.json()
         if not 'res' in data:
             self._dispatch_trigger(data)
