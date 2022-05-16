@@ -4,14 +4,14 @@ description: test rule
 enabled: true
 
 trigger:
-  type: aytra_sensor.aytra_trigger
+  type: aytrastorm.aytra_trigger
 
 criteria:
   trigger.rule:
     type: "equals"
     pattern: "rule2"
 action:
-  ref: aytra_sensor.send_email
+  ref: aytrastorm.send_email
   parameters:
     data: "{{trigger.data}}"
     sub: "something {{trigger.data}}"

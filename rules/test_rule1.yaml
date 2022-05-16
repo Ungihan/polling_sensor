@@ -4,7 +4,7 @@ description: test rule
 enabled: true
 
 trigger:
-  type: aytra_sensor.aytra_trigger
+  type: aytrastorm.aytra_trigger
 
 criteria:
   trigger.rule:
@@ -13,4 +13,4 @@ criteria:
     
 
 action:
-  ref: aytra_sensor.example_action
+  ref: aytrastorm.example_action
